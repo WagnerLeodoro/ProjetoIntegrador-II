@@ -1,0 +1,54 @@
+@using Microsoft.AspNetCore.Http
+@using PetVet.Models
+@model List<Usuario>
+
+@{
+    ViewData["Title"] = "Usuários";
+}
+
+<section id="list">
+    <div class="title">
+        <h2>Usuários Cadastrados</h2>
+    </div>
+    <div class="table-container">
+        <table id="table-no-resize">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data Nascimento</th>
+                    <th>Endereço</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    @if (Context.Session.GetInt32("userId") != null)
+                    {
+                        <th>Ações</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Usuario u in Model)
+                {
+                    <tr>
+                        <td>@u.Nome</td>
+                        <td>@u.DataNasc.ToString("dd/MM/yyyy")</td>
+                        <td>@u.Endereco</td>
+                        <td>@u.Email</td>
+                        <td>@u.Telefone</td>
+                        <td>@u.Login</td>
+                        <td>@u.Senha</td>
+                        <td>
+                            <a href="/Usuario/Editar?id=@u.Id">Editar |</a>
+                            <a href="/Usuario/Remover?id=@u.Id">Remover</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+@section Scripts{
+<script src="~/js/responsive.js"></script>
+<script src="~/js/basictable.js"></script>
+}

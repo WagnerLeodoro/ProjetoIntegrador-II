@@ -1,0 +1,30 @@
+@using PetVet.Models
+@model Usuario
+@{
+
+    ViewData["Title"] = "Login";
+}
+
+<section id="cadastro-agenda">
+    <div class="title">
+        <h2>Login</h2>
+    </div>
+    <div class="form-container">
+        <form asp-action="login" method="POST">
+            <div class="formRow">
+                <label asp-for="Login">Login:</label>
+                <input type="text" asp-for="Login" />
+            </div>
+            <div class="formRow">
+                <label asp-for="Senha">Senha:</label>
+                <input type=password asp-for="Senha" />
+            </div>
+            <div>
+                <input type="submit" class="btn-primary" value="Entrar" />
+            </div>
+        </form>
+</section>
+@section Scripts{
+<script src="~/js/responsive.js"></script>
+}
+</section>

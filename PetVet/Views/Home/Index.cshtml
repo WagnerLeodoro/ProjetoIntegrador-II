@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<section id="welcome">
+    <div class="intro-section">
+        <div class="grid">
+            <div class="text">
+                <h1>Bem vindo ao PetVet</h1>
+                <p>
+                    Fazemos questão de tratar o seu animal de estimação com carinho, respeito e um cuidado todo
+                    especial. Contando com uma equipe de profissionais experientes e responsáveis, oferecemos uma
+                    ampla gama de serviços destinados à saúde animal. Procuramos sempre estar um passo à frente do
+                    mercado, trabalhando com tecnologia de ponta e incluindo nos atendimentos as últimas tendências
+                    relacionadas ao mundo pet.
+
+                </p>
+
+                <p>
+                    Confira nossos serviços e faça já o seu cadastro
+                </p>
+                <div class="register">
+                    <a id="cadastro" asp-for="" asp-controller="Usuario" asp-action="cadastroUsuario">Cadastre-se</a>
+                </div>
+            </div>
+            <div class="photo">
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+<script src="~/js/responsive.js"></script>
+}

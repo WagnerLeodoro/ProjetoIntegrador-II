@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Agenda";
+}
+
+<section class="agenda">
+    <div class="agenda-menu">
+        <div class="grid-agenda">
+            <div class="agenda-title">
+                <p>Agendar Serviços</p>
+            </div>
+            <div class="service">
+                <div class="service-photo">
+                    <img src="~/assets/agenda.png" />
+                </div>
+                <div class="product-description">
+                    <a asp-for="" asp-controller="Servicos" asp-action="agendarServicos">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="agenda-menu">
+        <div class="grid-agenda">
+            <div class="agenda-title">
+                <p>Serviços Agendados</p>
+            </div>
+            <div class="service">
+                <div class="service-photo">
+                    <img src="~/assets/lista.png" />
+                </div>
+                <div class="product-description">
+                    <a asp-for="" asp-controller="Servicos" asp-action="listaAgenda">Visualizar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+<script src="~/js/responsive.js"></script>
+}
+</section>

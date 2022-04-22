@@ -1,0 +1,58 @@
+@using PetVet.Models
+@model Agenda
+
+@{
+    ViewData["Title"] = "Editar Agenda";
+}
+
+<section id="cadastro-agenda">
+    <div class="title">
+        <h2>Editar Agenda</h2>
+    </div>
+    <div class="form-container">
+        <form asp-action="editarAgenda" method="POST">
+            <input type="hidden" asp-for="Id" />
+            <div class="formRow">
+                <label asp-for="Nome">Nome:</label>
+            </div>
+            <div class="formRow">
+                <input type="text" asp-for="Nome" />
+            </div>
+            <div class="formRow">
+                <label asp-for="TipoAnimal">Qual o seu animalzinho?</label>
+            </div>
+            <div class="formRow">
+                <select asp-for="TipoAnimal">
+                    <option>Cachorro</option>
+                    <option>Gato</option>
+                    <option>Réptil</option>
+                    <option>Ave</option>
+                </select>
+            </div>
+            <div class="formRow" asp-for="TipoServico">
+                <label>Necessidade:</label>
+            </div>
+            <div class="formRow">
+                <select asp-for="TipoServico">
+                    <option>Banho</option>
+                    <option>Banho e Tosa</option>
+                    <option>Internamento</option>
+                    <option>Emergencia</option>
+                    <option>Consulta</option>
+                </select>
+            </div>
+            <div class="formRow">
+                <label asp-for="Detalhes">Observações:</label>
+            </div>
+            <div class="formRow">
+                <textarea asp-for="Detalhes" rows="3"></textarea>
+            </div>
+            <div class="formRow">
+                <input type="submit" value="Cadastrar" />
+            </div>
+        </form>
+</section>
+@section Scripts{
+<script src="~/js/responsive.js"></script>
+}
+</section>

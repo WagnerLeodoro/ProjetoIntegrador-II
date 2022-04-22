@@ -1,0 +1,72 @@
+@using PetVet.Models
+
+@{
+    ViewData["Title"] = "Sobre Nós";
+}
+<section>
+    <div class="intro-section">
+        <div class="grid-clinica">
+            <div class="caroussel-container">
+                <div class="slides fade">
+                    <img src="~/assets/clinica.jpg" />
+                </div>
+                <div class="slides fade">
+                    <img src="~/assets/clinica_instalacoes.jpg" />
+                </div>
+                <div class="slides fade">
+                    <img src="~/assets/clinica_equipe.jpg" />
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <div class="grid-clinica">
+            <section>
+                <div class="intro-section">
+                    <div class="grid-clinica">
+                        <div class="text">
+                            <div>
+                                <h1>Nossa História</h1>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    A PetVet é uma clínica veterinária localizada na cidade de Curitiba – PR. Idealizada
+                                    por uma
+                                    estudante recém-formada cuja paixão pelos bichinhos vem desde a sua infância.
+                                    Juntamente com
+                                    mais 2 colegas da faculdade decidiram empreender neste ramo e dessa forma ajudar a
+                                    melhorar
+                                    a
+                                    saúde e os cuidados com os animais. A empresa é ainda muito recente, tem apenas 6
+                                    meses de
+                                    atividade e tem visto sua clientela crescer consideravelmente. Conta com 3
+                                    atendentes para o
+                                    agendamento e venda dos artigos na loja. A clínica é voltada apenas para animais
+                                    domésticos
+                                    e
+                                    além dos serviços de veterinária oferece também uma série de produtos de petshop
+                                </p>
+                                <div>
+                                    <h1>Nossa Missão</h1>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        Proporcionar atendimento do mais alto padrão tecnológico e científico da
+                                        medicina
+                                        veterinária com diferencial no atendimento exclusivo e personalizado.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            @section Scripts{
+            <script src="~/js/responsive.js"></script>
+            <script src="~/js/caroussel.js"></script>
+            }

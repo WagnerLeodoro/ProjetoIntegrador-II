@@ -1,0 +1,52 @@
+@using PetVet.Models
+@model Usuario
+
+@{
+
+    ViewData["Title"] = "Editar Cadastro";
+}
+
+<section id="cadastro-agenda">
+    <div class="title">
+        <h2>Editar Usuário</h2>
+    </div>
+    <div class="form-container">
+        <form asp-action="editar" method="POST">
+            <input type="hidden" asp-for="Id" />
+            <div class="formRow">
+                <label asp-for="Nome">Nome:</label>
+                <input type="text" asp-for="Nome" />
+            </div>
+            <div class="formRow">
+                <label asp-for="DataNasc">Data de Nascimento:</label>
+                <input type="date" asp-for="DataNasc" />
+            </div>
+            <div class="formRow">
+                <label asp-for="Endereco">Endereço:</label>
+                <input type="text" asp-for="Endereco" />
+            </div>
+            <div class="formRow">
+                <label asp-for="Email">e-mail</label>
+                <input type="email" asp-for="Email" />
+            </div>
+            <div class="formRow">
+                <label asp-for="Telefone">Telefone:</label>
+                <input type="text" asp-for="Telefone" />
+            </div>
+            <div class="formRow">
+                <label asp-for="Login">Login:</label>
+                <input type="text" asp-for="Login" />
+            </div>
+            <div class="formRow">
+                <label asp-for="Senha">Senha:</label>
+                <input type=password asp-for="Senha" />
+            </div>
+            <div>
+                <input type="submit" class="btn-primary" value="Cadastrar" />
+            </div>
+        </form>
+</section>
+@section Scripts{
+<script src="~/js/responsive.js"></script>
+}
+</section>

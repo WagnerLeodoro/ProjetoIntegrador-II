@@ -1,0 +1,142 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PetVet</title>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar-container" id="myNavbar">
+            <div class="nav-menu">
+                <div class="brand">
+                    <a class="navbar-brand">
+                        <img src="~/assets/logo.svg" />
+                    </a>
+                    <div class="toggle">
+                        <a id="open" href="#" class="icon" id="toggleBtn" onclick="openMenu()">
+                            <span class="sr-only">
+                                &#9776;
+                            </span>
+                        </a>
+                        <a id="close" class="close" href="#" aria-label="Close main menu." onclick="openMenu()">
+                            <span class="sr-only">&times;</span>
+                        </a>
+                    </div>
+                </div>
+                <nav class="navbar-left">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a asp-for="" asp-controller="Home" asp-action="Index" class="nav-link">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-for="" asp-controller="Home" asp-action="sobrenos" class="nav-link">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-for="" asp-controller="Servicos" asp-action="catalogoProdutos"
+                                class="nav-link">Catalogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-for="" asp-controller="Servicos" asp-action="agenda" class="nav-link">Agenda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-for="" asp-controller="Home" asp-action="blog" class="nav-link">Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-menu">
+                <nav class="navbar-right">
+                    <div class="dropdown-menu">
+                        @if (Context.Session.GetInt32("userId") != null)
+                        {
+                            <a class="nav-link">Painel</a>
+                            <div class="dropdown-content">
+                                <a asp-for="" asp-controller="Servicos" asp-action="listaAgenda" class="nav-link">Gerenciar
+                                    Agenda</a>
+                                <a asp-for="" asp-controller="Usuario" asp-action="listarUsuario" class="nav-link">Gerenciar
+                                    Usuários</a>
+                            </div>
+                        }
+                    </div>
+                    <div class="menu">
+                        @if (Context.Session.GetInt32("userId") != null)
+                        {
+                            <ul class="navbar-nav">
+                                <span class="nav-link">
+                                    Olá @Context.Session.GetString("username")
+                                </span>
+                                <span>
+                                    <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Logout">Sair
+                                    </a>
+                                </span>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a asp-for="" asp-controller="Usuario" asp-action="cadastroUsuario"
+                                    class="nav-link">Cadastre-se</a>
+                                </li>
+                                <li class="nav-item">
+                                    <span>
+                                        <a class="nav-link" asp-controller="Usuario" asp-action="login">Login</a>
+                                    </span>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+    <footer>
+        <div class="footerContainer">
+            <div class="aboutUs">
+                <p>PetVet</p>
+                <ul>
+                    <li><a asp-for="" asp-controller="Home" asp-action="sobrenos">Quem Somos</a></li>
+                    <li><a asp-for="" asp-controller="Home" asp-action="sobrenos">Como funciona</a></li>
+                    <li><a asp-for="" asp-controller="Home" asp-action="sobrenos">Onde estamos</a></li>
+                </ul>
+            </div>
+            <div class="ourServices">
+                <p>Nossos Serviços</p>
+                <ul>
+                    <li><a asp-for="" asp-controller="Servicos" asp-action="catalogoProdutos">Veterinária</a></li>
+                    <li><a asp-for="" asp-controller="Servicos" asp-action="catalogoProdutos">Loja</a></li>
+                </ul>
+            </div>
+            <div class="moreInfo">
+                <p>Saiba Mais</p>
+                <ul>
+                    <li><a asp-for="" asp-controller="Home" asp-action="blog">Blog</a></li>
+                </ul>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="#"><img src="~/assets/instagram.png"></a></li>
+                        <li><a href="#"><img src="~/assets/whatsapp.png"></a></li>
+                        <li><a href="#"><img src="~/assets/facebook.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2021 PetVet - Clinica e Veterinária
+        </div>
+    </footer>
+    @RenderSection("Scripts", false)
+</body>
+
+</html>
