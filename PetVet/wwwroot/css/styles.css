@@ -49,6 +49,12 @@ header {
   }
 }
 
+@media screen and (max-width: 850px) {
+  .agenda {
+    flex-direction: column !important;
+  }
+}
+
 @media screen and (max-width: 977px) {
   .navbar-container.responsive {
     display: block;
@@ -149,10 +155,6 @@ header {
   }
   #cadastro-agenda form {
     width: 100% !important;
-  }
-  
-  .agenda {
-    flex-direction: column !important;
   }
 
   .copyright {

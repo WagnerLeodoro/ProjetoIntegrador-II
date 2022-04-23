@@ -12,7 +12,6 @@
         <table id="table-no-resize">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Nome</th>
                     <th>Tipo</th>
                     <th>Serviço</th>
@@ -28,22 +27,18 @@
 
                 {
                     <tr>
-                        <td>@a.Id</td>
                         <td>@a.Nome</td>
                         <td>@a.TipoAnimal</td>
                         <td>@a.TipoServico</td>
                         <td>@a.Detalhes</td>
                         @if (Context.Session.GetInt32("userId") != null)
-
                         {
                             <td>
                                 <a href="/Servicos/editarAgenda?id=@a.Id">Editar |</a>
                                 <a href="/Servicos/Remover?id=@a.Id">Remover</a>
                             </td>
-
                         }
                     </tr>
-
                 }
             </tbody>
         </table>
@@ -53,4 +48,3 @@
 <script src="~/js/responsive.js"></script>
 <script src="~/js/basictable.js"></script>
 }
-</section>
